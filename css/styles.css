@@ -605,12 +605,15 @@ button {
   position: relative;
   margin-bottom: 7px;
 }
-.request-field svg {
+.request-field.message {
+  margin-bottom: 12px;
+}
+.request-field-icon {
   position: absolute;
   left: 12px;
   bottom: 10px;
 }
-.request-label {
+.request-field-label {
   display: block;
   font-size: 12px;
   line-height: 1.555555556;
@@ -618,17 +621,54 @@ button {
   margin-bottom: 3px;
   color: var(--primary-text-color);
 }
-.request-data {
+.request-field-input,
+.request-field-textarea {
   font-size: 16px;
   line-height: 1.25;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   width: 100%;
+}
+.request-field-input {
   padding: 9px 9px 9px 40px;
 }
-textarea.request-data {
-  padding-left: 9px;
+.request-field-textarea {
+  resize: none;
+  padding: 9px;
 }
-/* .request-field:focus-within .request-data {
+.request-field:focus-within .request-data {
   border-color: var(--accent-color);
-} */
+}
+.request-field.agreement {
+  padding-left: 14px;
+}
+.request-field.agreement input[type="checkbox"] {
+  display: none;
+}
+.agreement-check {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 15px;
+  margin-right: 4px;
+  border-radius: 2px;
+  border: 1px solid var(--title-color);
+  background: var(--primary-color);
+  transition-property: all;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+input:checked + .agreement-check {
+  border-color: var(--accent-color);
+  background: var(--accent-color);
+}
+.agreement-link {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+.request-btn {
+  display: block;
+  margin: 30px auto 0;
+  padding: 10px 55px;
+}
