@@ -178,7 +178,10 @@ button {
   background: var(--accent-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
-
+input:focus,
+textarea:focus {
+  outline: transparent;
+}
 .section {
   padding-top: 95px;
   padding-bottom: 95px;
@@ -532,6 +535,9 @@ button {
   color: var(--secondary-text-color);
   letter-spacing: 0.03em;
 }
+.subscribe-email:focus {
+  border-color: var(--accent-color);
+}
 .subscribe-email::placeholder {
   font-size: 16px;
   line-height: 1.25;
@@ -636,9 +642,26 @@ button {
   resize: none;
   padding: 9px;
 }
-.request-field:focus-within .request-data {
+.request-field:focus-within .request-field-icon,
+.request-field-input:valid + .request-field-icon {
+  fill: var(--accent-color);
+}
+.request-field-input:valid,
+.request-field-textarea:focus:valid,
+.request-field-input:focus,
+.request-field-textarea:focus {
   border-color: var(--accent-color);
 }
+
+.request-field-input:focus:invalid,
+.request-field-textarea:focus:invalid {
+  border-color: red;
+}
+
+.request-field-input:focus:invalid + .request-field-icon {
+  fill: red;
+}
+
 .request-field.agreement {
   padding-left: 14px;
 }
