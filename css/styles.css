@@ -117,6 +117,7 @@ button {
   margin-bottom: 50px;
   text-align: center;
   letter-spacing: 0.03em;
+  color: var(--title-color);
 }
 .item-title {
   font-size: 14px;
@@ -199,6 +200,7 @@ textarea:focus {
 }
 .header-menu-link {
   position: relative;
+  color: var(--title-color);
   transition-property: color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
